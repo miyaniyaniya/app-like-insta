@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :pictures
+
   get 'singles/welcome'
 
   # The priority is based upon order of creation: first created -> highest priority.

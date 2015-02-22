@@ -2,10 +2,21 @@
 body{
   padding-top: 70px;
 }
-
-a{
-  color: #fff;
-  &:hover{
-    color: #ccc;
-  }
+.navbar-default{
+ background-color: #3D6B91;
+ a{
+   color: #fff !important;
+   &:hover{
+     color: #ccc !important;
+   }
+ }
 }
+
+header{
+ background-color: #3D6B91;
+ a{
+   font-size: 18px;
+ }
+}
+
+

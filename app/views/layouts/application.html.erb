@@ -3,23 +3,24 @@
 <head>
   <title>AppLikeInsta</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body style="padding-top: 70px">
   <%# //body{padding-top: 70px} navbar-fixed-topでoverlayさせないため %>
-  <header class="navbar navbar-fixed-top" id="top" role="banner">
-    <div class="container-fluid" style="background-color: #3D6B91;">
+  <header class="navbar navbar-default navbar-fixed-top" id="top" role="banner">
+    <div class="container-fluid">
       <div class="navbar-header">
-        <a href=<%= root_url %> class="navbar-brand"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> App-like-Insta</a>
+        <a href=<%= root_url %> class="navbar-brand"><span class="glyphicon glyphicon-home" aria-hidden="false"></span> App-like-Insta</a>
       </div>
-      <!-- <nav  class="collapse navbar&#45;collapse bs&#45;navbar&#45;collapse"> -->
-      <!--   <ul class="nav navbar&#45;nav"> -->
-      <!--     <li><a href="#">###</a></li> -->
-      <!--     <li><a href="#">###</a></li> -->
-      <!--   </ul> -->
+      <div  class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href=<%= pictures_url %>><span class="glyphicon glyphicon-camera" aria-hidden="false"></span> 写真一覧</a></li>
+        </ul>
+      </div>
+
       <!--   <ul class="nav navbar&#45;nav navbar&#45;right"> -->
       <!--     <li><a href="#">###</a></li> -->
           <!-- <li class="dropdown"> -->
