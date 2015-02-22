@@ -8,9 +8,34 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-
+<body style="padding-top: 70px">
+  <%# //body{padding-top: 70px} navbar-fixed-topでoverlayさせないため %>
+  <header class="navbar navbar-fixed-top" id="top" role="banner">
+    <div class="container-fluid" style="background-color: #3D6B91;">
+      <div class="navbar-header">
+        <a href=<%= root_url %> class="navbar-brand"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> App-like-Insta</a>
+      </div>
+      <!-- <nav  class="collapse navbar&#45;collapse bs&#45;navbar&#45;collapse"> -->
+      <!--   <ul class="nav navbar&#45;nav"> -->
+      <!--     <li><a href="#">###</a></li> -->
+      <!--     <li><a href="#">###</a></li> -->
+      <!--   </ul> -->
+      <!--   <ul class="nav navbar&#45;nav navbar&#45;right"> -->
+      <!--     <li><a href="#">###</a></li> -->
+          <!-- <li class="dropdown"> -->
+          <!--   <a href="#" class="dropdown&#45;toggle" data&#45;toggle="dropdown" role="button" aria&#45;expanded="false">DropDown<span class="caret"></span></a> -->
+          <!--   <ul class="dropdown&#45;menu" role="menu"> -->
+          <!--     <li><a href="#">Action</a></li> -->
+          <!--     <li class="divider"></li> -->
+          <!--     <li><a href="#">Action</a></li> -->
+          <!--   </ul> -->
+          <!-- </li> -->
+      <!--   </ul> -->
+      <!-- </nav> -->
+    </div>
+  </header>
+  <div class="container">
+    <%= yield %>
+  </div>
 </body>
 </html>

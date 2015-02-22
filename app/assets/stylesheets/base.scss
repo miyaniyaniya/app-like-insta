@@ -1,0 +1,11 @@
+// #application body{..}
+body{
+  padding-top: 70px;
+}
+
+a{
+  color: #fff;
+  &:hover{
+    color: #ccc;
+  }
+}
