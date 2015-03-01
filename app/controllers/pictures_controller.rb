@@ -4,21 +4,13 @@ class PicturesController < ApplicationController
   # GET /pictures
   # GET /pictures.json
   def index
+    @picture = Picture.new
     @pictures = Picture.all
   end
 
   # GET /pictures/1
   # GET /pictures/1.json
   def show
-  end
-
-  # GET /pictures/new
-  def new
-    @picture = Picture.new
-  end
-
-  # GET /pictures/1/edit
-  def edit
   end
 
   # POST /pictures
@@ -28,7 +20,7 @@ class PicturesController < ApplicationController
 
     respond_to do |format|
       if @picture.save
-        format.html { redirect_to @picture, notice: 'Picture was successfully created.' }
+        format.html { redirect_to pictures_path, notice: 'Picture was successfully created.' }
         format.json { render :show, status: :created, location: @picture }
       else
         format.html { render :new }

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :pictures
+  resources :pictures, only: %w(index show create update destroy)
 
   get 'singles/welcome'
 

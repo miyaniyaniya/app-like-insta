@@ -1,3 +1,40 @@
+<style type="text/css">
+  .fileUploader{
+    position: relative;
+  }
+  .fileUploader .fileBtn{
+    width: 100%;
+    max-width: 455px;
+    background-color: #3d6b91;
+    color: white;
+  }
+  .fileUploader:hover{
+    opacity: 0.9;
+    cursor: pointer;
+  }
+  .fileUploader .uploader{
+    position: absolute;
+    top: -20px;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    max-width: 455px;
+    height: 54px;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .actions input[type="submit"]{
+    opacity: 0;
+  }
+</style>
+<script type="text/javascript">
+  function pictureSubmit(elem){
+    document.getElementById("new_picture").submit();
+  };
+  // document.getElementById("picture_image_url").onchange = funciton(){
+  //   document.getElementById("new_picture").submit();
+  // };
+</script>
 <%= form_for(@picture) do |f| %>
   <% if @picture.errors.any? %>
     <div id="error_explanation">
@@ -11,9 +48,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :image_url %><br>
-    <%= f.text_field :image_url %>
+  <div class="field fileUploader">
+    <%# <%= f.label :image_url %>
+    <!-- <br> -->
+    <button class="btn fileBtn">
+      <span class="glyphicon glyphicon-camera" aria-hidden="false"></span>
+
+      画像を投稿する
+    </button>
+    <%= f.file_field :image_url, class: 'uploader', onchange: "pictureSubmit(this)"%>
   </div>
   <div class="actions">
     <%= f.submit %>

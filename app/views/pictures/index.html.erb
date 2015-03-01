@@ -1,27 +1,49 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Pictures</h1>
+<div class="row" style="">
+  <div class="col-md-3"></div>
+  <div class="col-md-6" style="">
+    <!-- <p id="notice"><%= notice %></p> -->
 
-<table>
-  <thead>
-    <tr>
-      <th>Image url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <%= render partial: 'form' %>
+    <br/>
 
-  <tbody>
-    <% @pictures.each do |picture| %>
-      <tr>
-        <td><%= picture.image_url %></td>
-        <td><%= link_to 'Show', picture %></td>
-        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <% @pictures.order("id desc").each do |picture| %>
+      <%= image_tag(picture.image_url, width: "455px", height: "455px") %>
+      </br>
+      <%# <%= link_to '変更する', edit_picture_path(picture) %>
+      <%= link_to 'この画像を削除する', picture, method: :delete, data: { confirm: '削除してもよろしいですか？' } %>
+
+      </br>
+      </br>
     <% end %>
-  </tbody>
-</table>
+  </div>
+  <div class="col-md-3"></div>
+</div>
 
-<br>
-
-<%= link_to 'New Picture', new_picture_path %>
+<!-- <div class="row"> -->
+<!--   <div class="col&#45;md&#45;1">.col&#45;md&#45;1</div> -->
+<!--   <div class="col&#45;md&#45;1">.col&#45;md&#45;1</div> -->
+<!--   <div class="col&#45;md&#45;1">.col&#45;md&#45;1</div> -->
+<!--   <div class="col&#45;md&#45;1">.col&#45;md&#45;1</div> -->
+<!--   <div class="col&#45;md&#45;1">.col&#45;md&#45;1</div> -->
+<!--   <div class="col&#45;md&#45;1">.col&#45;md&#45;1</div> -->
+<!--   <div class="col&#45;md&#45;1">.col&#45;md&#45;1</div> -->
+<!--   <div class="col&#45;md&#45;1">.col&#45;md&#45;1</div> -->
+<!--   <div class="col&#45;md&#45;1">.col&#45;md&#45;1</div> -->
+<!--   <div class="col&#45;md&#45;1">.col&#45;md&#45;1</div> -->
+<!--   <div class="col&#45;md&#45;1">.col&#45;md&#45;1</div> -->
+<!--   <div class="col&#45;md&#45;1">.col&#45;md&#45;1</div> -->
+<!-- </div> -->
+<!-- <div class="row"> -->
+<!--   <div class="col&#45;md&#45;8">.col&#45;md&#45;8</div> -->
+<!--   <div class="col&#45;md&#45;4">.col&#45;md&#45;4</div> -->
+<!-- </div> -->
+<!-- <div class="row"> -->
+<!--   <div class="col&#45;md&#45;4">.col&#45;md&#45;4</div> -->
+<!--   <div class="col&#45;md&#45;4">.col&#45;md&#45;4</div> -->
+<!--   <div class="col&#45;md&#45;4">.col&#45;md&#45;4</div> -->
+<!-- </div> -->
+<!-- <div class="row"> -->
+<!--   <div class="col&#45;md&#45;6">.col&#45;md&#45;6</div> -->
+<!--   <div class="col&#45;md&#45;6">.col&#45;md&#45;6</div> -->
+<!-- </div> -->
