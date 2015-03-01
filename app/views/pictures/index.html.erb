@@ -1,7 +1,21 @@
+<style type="text/css">
+  .comments{
+    width: 100%;
+    max-width: 455px;
+    background-color: white;
+    border: solid 1px #ccc;
+  }
+  .comment{
+    padding: 10px;
+    width: 100%;
+    max-width: 455px;
+    border-bottom: 1px solid #e6e6e6;
+  }
+</style>
 
 <div class="row" style="">
   <div class="col-md-3"></div>
-  <div class="col-md-6" style="">
+  <div class="col-md-6" style="border-radius:5px;">
     <!-- <p id="notice"><%= notice %></p> -->
 
     <%= render partial: 'form' %>
@@ -11,7 +25,16 @@
       <%= image_tag(picture.image_url, width: "455px", height: "455px") %>
       </br>
       <%# <%= link_to '変更する', edit_picture_path(picture) %>
-      <%= link_to 'この画像を削除する', picture, method: :delete, data: { confirm: '削除してもよろしいですか？' } %>
+      <%# <%= link_to 'この画像を削除する', picture, method: :delete, data: { confirm: '削除してもよろしいですか？' } %>
+      <div class="comments">
+        <% picture.comments.each do |comment| %>
+          <div class="comment">
+            <span class="glyphicon glyphicon-hand-right"></span>
+            <%= comment.text %>
+          </div>
+        <% end %>
+        <%= render partial: '/comments/form', locals: {comment: picture.comments.build} %>
+      </div>
 
       </br>
       </br>

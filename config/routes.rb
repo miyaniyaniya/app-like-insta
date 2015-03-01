@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :comments, only: %w(index show create update destroy)
+
   resources :pictures, only: %w(index show create update destroy)
 
   get 'singles/welcome'

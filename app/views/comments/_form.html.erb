@@ -1,0 +1,33 @@
+<style type="text/css">
+  #comment_text{
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+    max-width: 435px;
+  }
+</style>
+<%= form_for(comment) do |f| %>
+  <% if comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+      <% comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%# <%= f.label :picture_id %>
+    <%= f.hidden_field :picture_id %>
+  </div>
+  <div class="field">
+    <%# <%= f.label :text %>
+    <%= f.text_field :text, placeholder: 'Write a comment...'%>
+  </div>
+  <div class="actions" style="height: 0px;">
+    <%= f.submit %>
+  </div>
+<% end %>
